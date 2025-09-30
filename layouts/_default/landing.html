@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <section class="landing-hero" style="padding:3rem 0 1.5rem;">
+    {{ if .Title }}<h1 class="landing-title">{{ .Title }}</h1>{{ end }}
+    {{ with .Params.subtitle }}<p class="landing-subtitle">{{ . }}</p>{{ end }}
+    {{/* El contenido de _index.md */}}
+    <div class="landing-content">
+      {{ .Content }}
+    </div>
+  </section>
+{{ end }}
