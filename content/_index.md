@@ -6,16 +6,17 @@ layout: landing
 <div class="book-hero">
 
 # jardín / materia {anchor=false}
-reflexiones, ideas/pensamiento/prácticas interconectadas en construcción permanente 
+reflexiones, ideas/pensamiento/prácticas interconectadas en construcción permanente
+Sara Jiménez. 
 
 
-{{% columns %}}
+{{< columns >}}
 - ## semillero  
   lecturas, notas, ideas, textos y conceptos entre la **teoría**, las **ficciones** y otras formas de conocimiento.  
   **semilla**/**brote**/**planta**/**esqueje**.
 - ## herbario  
   Book theme is not trying to implement all features but to create a starting point. It is mostly feature complete and gets updated and improved to stay relevant with Hugo and modern web.
-{{% columns %}}
+{{< /columns >}}
 
 {{< columns >}}
 - {{< card >}}
