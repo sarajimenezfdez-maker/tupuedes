@@ -1,0 +1,94 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'home'
+theme = 'hugo-book'
+
+copyright = '[© CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)'
+
+# Book configuration
+disablePathToLower = true
+enableGitInfo = true
+
+# Needed for mermaid/katex shortcodes
+[markup]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  startLevel = 1
+
+[menu]
+[[menu.home]]
+  name = "el jardín"
+  pageRef = "/docs/example/"
+  weight = 1
+
+[[menu.home]]
+  pageRef = "/docs/example/"
+  weight = 10
+  parent = "el jardín"
+
+[[menu.home]]
+  name = "Shortcodes"
+  pageRef = "/docs/shortcodes/badges/"
+  weight = 20
+  parent = "el jardín"
+
+[[menu.home]]
+  name = "sobre mí"
+  pageRef = "/sobremi/"
+  weight = 2
+
+
+[params]
+  # (Optional, default light) Sets color theme: light, dark or auto.
+  # Theme 'auto' switches between dark and light modes based on browser/os preferences
+  BookTheme = 'light'
+
+  # (Optional, default none) Controls table of contents visibility on right side of pages.
+  # Start and end levels can be controlled with markup.tableOfContents setting.
+  # You can also specify this parameter per page in front matter.
+  # BookToC = true
+
+  # (Optional, default favicon.png) Set the path to a favicon file.
+  # If the favicon is /static/favicon.png then the path would be favicon.png
+  # BookFavicon = 'favicon.png'
+
+  # (Optional, default none) Set the path to a logo for the book.
+  # If the logo is /static/logo.png then the path would be logo.png
+  # BookLogo = 'logo.png'
+
+
+  # Here for backwar compatibility, not required.
+  BookRepo = 'https://github.com/alex-shpak/hugo-book/'
+
+  # (Optional, default none) Set template for commit link for the page. Requires enableGitInfo.
+  # When set enabled 'Last Modified' and a link to the commit in the footer of the page.
+  # Param is executed as template using .Site, .Page and .GitInfo as context.
+  BookLastChangeLink = '{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}'
+
+  # (Optional, default none) Set template for edit page link.
+  # When set enabled 'Edit this page' link in the footer of the page.
+  # Param is executed as template using .Site, .Page and .Path as context.
+  BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/exampleSite/{{ .Path }}'
+
+  # (Optional, default 'January 2, 2006') Configure the date format used on the pages
+  # - In git information
+  # - In blog posts
+  # https://gohugo.io/functions/time/format/
+  BookDateFormat = 'January 2, 2006'
+
+  # (Optional, default true) Enables search function with fuse.js.,
+  # Index is built on fly, therefore it might slowdown your website.
+  # Configuration for indexing can be adjusted in i18n folder per language.
+  BookSearch = true
+
+  # (Optional, default true) Enables comments template on pages
+  # By default partals/docs/comments.html includes Disqus template
+  # See https://gohugo.io/content-management/comments/#configure-disqus
+  # Can be overwritten by same param in page frontmatter
+  BookComments = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
